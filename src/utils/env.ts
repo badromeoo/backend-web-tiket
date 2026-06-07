@@ -7,6 +7,7 @@ dotenv.config({
 });
 const envSchema = z.object({
   DB_URL: z.string().min(1, "DB_URL wajib diisi"),
+  JWT_SECRET:z.string().min(1, "DB_URL wajib diisi"),
 });
 const env = envSchema.parse(process.env);
 
