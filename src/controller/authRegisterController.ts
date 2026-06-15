@@ -4,7 +4,7 @@ import validateRegisterSchema from "../type/validateRegisterSchema.ts";
 import errorMessageZod from "../type/errorMessageZod/errorMessageZod.ts";
 import userModel from "../model/user.model.ts";
 import bcrypt from "bcrypt";
-import findUserByEmail from "../repository/findUser.ts";
+import findUserByEmail from "../repository/findUserByEmail.ts";
 
 const register = async (req: Request, res: Response) => {
   try {

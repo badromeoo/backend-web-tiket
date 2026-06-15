@@ -3,7 +3,7 @@ import * as z from "zod";
 import validateLoginSchema from "../type/validateLoginSchema.ts";
 import errorMessageZod from "../type/errorMessageZod/errorMessageZod.ts";
 import bcrypt from "bcrypt";
-import findUserByEmail from "../repository/findUser.ts";
+import findUserByEmail from "../repository/findUserByEmail.ts";
 import env from "../utils/env.ts";
 import jwt from "jsonwebtoken";
 
