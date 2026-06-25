@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { userInterface } from "../type/typeUser/typeUser.ts";
+import { userInterface } from "../type/User/typeUser.ts";
 
 const schema = mongoose.Schema;
 
@@ -14,6 +14,7 @@ const userSchema = new schema<userInterface>(
     profilePicture: { type: schema.Types.String, default: "user.jpg" },
     isActive: { type: schema.Types.Boolean, default: false },
     activationCode: { type: schema.Types.String },
+    tokenVersion: { type: Number, default: 0 }
   },
   { timestamps: true },
 );

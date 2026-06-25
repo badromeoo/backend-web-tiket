@@ -8,4 +8,7 @@ export interface userInterface {
   profilePicture: string;
   isActive: boolean;
   activationCode: string;
+  createdAt: Date;
+  updatedAt: Date;
+  tokenVersion:number;
 }

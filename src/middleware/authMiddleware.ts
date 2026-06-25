@@ -1,15 +1,14 @@
 import jwt from "jsonwebtoken";
-import { Request, Response, NextFunction } from "express";
+import { Response, NextFunction } from "express";
 import env from "../utils/env.ts";
-import {UserAuthPayload} from "../type/typeUser/typeUserAuthPayload.ts"
+import {UserAuthPayload} from "../type/User/typeUserAuthPayload.ts"
 import { AuthenticatedRequest } from "../type/request/authRequest.ts";
 
 const jwtSecret = env.JWT_SECRET;
 
 const validToken = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
-  const authHeader = req.headers.authorization;
-  if (authHeader !== undefined) {
-    const token = authHeader.split(" ")[1];
+  const token = req.cookies.remember;
+  if (token !== undefined) {
     if (token !== undefined && token !== "") {
       try {
         const decode = jwt.verify(token!, jwtSecret) as UserAuthPayload;
